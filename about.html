@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sue's Portfolio | About</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Sue's Portfolio</a>
+
+    <button id="menu-btn" type="button">&#8801; Menu</button>
+
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+      <button id="theme-btn" type="button">Dark Mode</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>About Me</h1>
+      <p>I'm a high school student who likes design, coding, and making games.</p>
+    </section>
+
+    <section>
+      <h2>What I Do</h2>
+      <p>Skills, tools, and goals will go here.</p>
+
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="skills">Skills</button>
+          <button class="tab-btn" data-tab="tools">Tools</button>
+          <button class="tab-btn" data-tab="goals">Goals</button>
+        </div>
+
+        <div class="tab-panel active" id="skills"><p>HTML, CSS, JS</p></div>
+        <div class="tab-panel" id="tools"><p>VS Code, Figma, Rive</p></div>
+        <div class="tab-panel" id="goals"><p>Build a game site.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Fun Facts</h2>
+      <p>Questions and answers will go here.</p>
+
+      <details>
+        <summary>What programming languages do you know how to code in?</summary>
+        <p>I know how to code in a few different coding languages including:</p>
+        <ul>
+          <li>JavaScript</li>
+          <li>C#</li>
+          <li>Python</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>What programming editors have you used?</summary>
+        <p>I have used several different programming editors over the years including: VS Code, Visual Studio Community, Notepad++, Sublime Text, Jetbrains, and many more.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Sue</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,241 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --card-bg: #f2f2f2;
+}
+
+/* ===== Page basics ===== */
+body {
+  margin: 0; /* tight to top corner */
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  /*background-color: #ffffff;*/
+  background-color: var(--bg);
+  /*color: #1a1a1a;*/
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* size of the main content */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 30px 0;
+}
+
+/* ===== Header and nav ===== */
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: #1f7a6f;
+}
+
+.logo {
+  margin-right: auto;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Hero ===== */
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+/* ===== Project cards ===== */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 240px;  padding: 16px;
+  border-radius: 10px;
+  /* background-color: #f2f2f2;*/
+  background-color: var(--card-bg);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card-image {
+  height: 120px;
+  border-radius: 6px;
+}
+
+.color-1 { background-color: #2a9d8f; }
+.color-2 { background-color: #e9c46a; }
+.color-3 { background-color: #e76f51; }
+
+/* ===== Buttons ===== */
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1f7a6f;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #155e55;
+}
+
+/* Buttons inside the header need a darker colour to stand out */
+header button {
+  background-color: #155e55;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #1e2230;
+  color: #ffffff;
+}
+
+#menu-btn {
+  display: none; /*hide it */
+}
+
+#theme-btn {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #eeeeee;
+  --card-bg: #2a2a2a;
+}
+
+.dark .card {
+  border: 1px solid #3a3a3a;
+}
+
+.tab-btn {
+  padding: 10px 16ps;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.tab-panel { display: none; }
+.tab-panel.active {display: block; }
+
+/* ---------- Accordion Style ---------------*/
+details {
+  background: var(--card-bg);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden; /* keeps the rounded corners when open - gives space at the bottom*/
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* the + on the right */
+summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: #1f7a6f;
+}
+
+/* change to the + to − when open */
+details[open] summary::after {
+  content: "\2212";
+}
+
+summary:hover {
+  color: #1f7a6f;
+}
+
+/* the answer area */
+details > *:not(summary) {
+  margin: 0;
+  padding: 0 18px 14px; /*moves in off left edge */
+}
+
+details ul {
+  padding-left: 40px; /* keep the bullets indented */
+}
+
+/* a little edge in dark mode, like the cards */
+.dark details {
+  border: 1px solid #3a3a3a;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+}
+
+/*phone size */
+@media (max-width: 700px){
+  header {
+    flex-wrap: wrap;
+  }
+  #menu-btn {
+    display: block; /* show it */
+  }
+  #main-nav {
+    display: none; /*hide it*/
+  }
+  #main-nav.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  #main-nav.open ul {
+    flex-direction: column;
+  }
+  #theme-btn {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+}

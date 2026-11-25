@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sue's Portfolio | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.classList.add("dark");
+    }
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Sue's Portfolio</a>
+
+    <button id="menu-btn" type="button">&#8801; Menu</button>
+
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#contact">Contact</a>
+      <button id="theme-btn" type="button">Dark Mode</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Hi, I'm Sue.</h1>
+      <p>I build websites and small games. Here's some of my work.</p>
+    </section>
+
+    <section>
+      <h2>My Projects</h2>
+      <div class="card-row">
+        <div class="card">
+          <div class="card-image color-1"></div>
+          <h3>Game Site</h3>
+          <p>A website for a game I made in Unity.</p>
+        </div>
+        <div class="card">
+          <div class="card-image color-2"></div>
+          <h3>Poster Set</h3>
+          <p>Three event posters made in Figma.</p>
+        </div>
+        <div class="card">
+          <div class="card-image color-3"></div>
+          <h3>Recipe Page</h3>
+          <p>A one-page recipe site built with Grid.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" maxlength="300" required></textarea>
+        <p id="char-count">0 / 300</p>
+
+        <button type="submit">Send</button>
+      </form>
+      <p id="form-status"></p>
+
+      <br><br>
+      <p>Want to work together? Copy my email and send me a message.</p>
+      <button id="copy-email" type="button">Copy my email</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Sue</p>
+  </footer>
+</body>
+</html>
